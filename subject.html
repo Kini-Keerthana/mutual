@@ -24,43 +24,57 @@
     </div>
   </div>
 </header>
-    <div class="container">
-        <!-- Step 1: Select Level -->
-        <div class="step step1 active">
-            <h2>Select Educational Level</h2>
-            <select id="levelSelect">
-      <option value="">-- Select Level --</option>
-      <option value="class1_5">Class 1–5</option>
-      <option value="class6_10">Class 6–10</option>
-      <option value="plus1">+1 (Intermediate 1st Year)</option>
-      <option value="plus2">+2 (Intermediate 2nd Year)</option>
-      <option value="undergraduate">Undergraduate</option>
-      <option value="postgraduate">Postgraduate</option>
-    </select>
-            <button id="next1" onclick="nextStep(1)" disabled>Next</button>
+      <div class="container">
+        <h1>Personalized Learning Recommendation</h1>
+
+        <div class="form-section">
+            <!-- Educational Level -->
+            <label for="level">Select Your Educational Level:</label>
+            <select id="level">
+            <option value="">--Select--</option>
+            <option value="1-5">Class 1-5</option>
+            <option value="6-10">Class 6-10</option>
+            <option value="+1">+1 (Intermediate 1st Year)</option>
+            <option value="+2">+2 (Intermediate 2nd Year)</option>
+            <option value="undergraduate">Undergraduate</option>
+            <option value="postgraduate">Postgraduate</option>
+        </select>
+
+            <!-- Goal -->
+            <label for="goal">Select Your Goal:</label>
+            <select id="goal">
+            <option value="">--Select--</option>
+            <option value="improve_grades">Improve Grades</option>
+            <option value="learn_skills">Learn New Skills</option>
+            <option value="competitive_exam">Prepare for Competitive Exams</option>
+            <option value="career_guidance">Career Guidance</option>
+        </select>
+
+            <!-- Area of Interest -->
+            <label for="interest">Select Area of Interest:</label>
+            <select id="interest">
+            <option value="">--Select--</option>
+            <option value="math">Mathematics</option>
+            <option value="science">Science</option>
+            <option value="computer">Computer Science</option>
+            <option value="english">English</option>
+            <option value="history">History</option>
+            <option value="arts">Arts</option>
+        </select>
+
+            <button onclick="getRecommendations()">Get Recommendations</button>
         </div>
 
-        <!-- Step 2: Select Subject -->
-        <div class="step step2">
-            <h2>Select Subject</h2>
-            <select id="subjectSelect">
-      <option value="">-- Select Subject --</option>
-    </select>
-            <button id="next2" onclick="nextStep(2)" disabled>Next</button>
-        </div>
-
-        <!-- Step 3: Recommended Content -->
-        <div class="step step3">
-            <h2>Recommended Content</h2>
-            <div id="contentRecommendations" class="recommendation"></div>
-            <button onclick="restart()">Start Over</button>
+        <div class="result-section">
+            <h2>Recommended Courses / Resources:</h2>
+            <ul id="recommendations"></ul>
         </div>
     </div>
-
     <script src="subject.js"></script>
 </body>
 
 </html>
+
 
 
 
