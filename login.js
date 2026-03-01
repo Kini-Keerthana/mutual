@@ -91,7 +91,7 @@ loginForm.addEventListener('submit', (e) => {
 
     if (validUser) {
         alert("Login successful!");
-        window.location.href = "education.html";
+        window.location.href = "subject.html";
     } else {
         alert("Invalid email or password!");
 
@@ -103,3 +103,4 @@ loginForm.addEventListener('submit', (e) => {
         emailInput.focus();
     }
 });
+
