@@ -73,7 +73,7 @@ function populateSubjects(level) {
 function showContent(subject) {
     const contentDiv = document.getElementById("contentRecommendations");
     if (contents[subject] && contents[subject].length > 0) {
-        contentDiv.innerHTML = contents[subject].map(c => `• ${c}`).join("<br>");
+        contentDiv.innerHTML = contents[subject].map(c => `â€¢ ${c}`).join("<br>");
     } else {
         contentDiv.innerHTML = "No content found for this subject yet.";
     }
@@ -88,3 +88,4 @@ function restart() {
     document.getElementById("next1").disabled = true;
     document.getElementById("next2").disabled = true;
 }
+
