@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Selection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+  <div class="navbar">
+    <div class="logo">AI Engineering Hub</div>
+    <div class="nav-links">
+      <ul>
+        <li><a href="https://onecompiler.com/html/44ezyqj42">Home</a></li>
+        <li><a href="https://onecompiler.com/html/44ezyqd6t">Login</a></li>
+        <li><a href="https://onecompiler.com/html/44ezyq36h">Subjects</a></li>
+        <li><a href="https://onecompiler.com/html/44ezyqj42">AI Quiz</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#assistant">AI Assistant</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+    <div class="container">
+        <!-- Step 1: Select Level -->
+        <div class="step step1 active">
+            <h2>Select Educational Level</h2>
+            <select id="levelSelect">
+      <option value="">-- Select Level --</option>
+      <option value="class1_5">Class 1–5</option>
+      <option value="class6_10">Class 6–10</option>
+      <option value="plus1">+1 (Intermediate 1st Year)</option>
+      <option value="plus2">+2 (Intermediate 2nd Year)</option>
+      <option value="undergraduate">Undergraduate</option>
+      <option value="postgraduate">Postgraduate</option>
+    </select>
+            <button id="next1" onclick="nextStep(1)" disabled>Next</button>
+        </div>
+
+        <!-- Step 2: Select Subject -->
+        <div class="step step2">
+            <h2>Select Subject</h2>
+            <select id="subjectSelect">
+      <option value="">-- Select Subject --</option>
+    </select>
+            <button id="next2" onclick="nextStep(2)" disabled>Next</button>
+        </div>
+
+        <!-- Step 3: Recommended Content -->
+        <div class="step step3">
+            <h2>Recommended Content</h2>
+            <div id="contentRecommendations" class="recommendation"></div>
+            <button onclick="restart()">Start Over</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

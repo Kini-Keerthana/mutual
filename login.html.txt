@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Create Account</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+  <header>
+  <div class="navbar">
+    <div class="logo">AI Engineering Hub</div>
+    <div class="nav-links">
+      <ul>
+        <li><a href="https://onecompiler.com/html/44ezyqj42">Home</a></li>
+        <li><a href="https://onecompiler.com/html/44ezyqd6t">Login</a></li>
+        <li><a href="https://onecompiler.com/html/44ezyq36h">Subjects</a></li>
+        <li><a href="https://onecompiler.com/html/44ezyqj42">AI Quiz</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#assistant">AI Assistant</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+    <div class="container">
+        <div class="form-container">
+            <div class="form-toggle">
+                <button id="login-toggle" class="active">Login</button>
+                <button id="signup-toggle">Create Account</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form">
+                <h2>Login</h2>
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signup-form" class="hidden">
+                <h2>Create Account</h2>
+                <input type="text" id="signup-name" placeholder="Full Name" required>
+                <input type="email" id="signup-email" placeholder="Email" required>
+                <input type="password" id="signup-password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+
+</html>
