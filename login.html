@@ -4,28 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login / Create Account</title>
+    <title>Website with Login Modal</title>
     <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
- <header>
-  <div class="navbar">
-    <div class="logo">AI Engineering Hub</div>
-    <div class="nav-links">
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="subject.html">Subjects</a></li>
-        <li><a href="home.html">AI Quiz</a></li>
-        <li><a href="#dashboard">Dashboard</a></li>
-        <li><a href="#assistant">AI Assistant</a></li>
-      </ul>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">MyWebsite</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Subjects</a></li>
+            <li><a href="#">AI Quiz</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><button id="open-login" class="nav-btn">Login / Sign Up</button></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1>Welcome to MyWebsite</h1>
+        <p>Explore educational resources, quizzes, and dashboards!</p>
+        <button id="open-login-2" class="main-btn">Login / Sign Up</button>
     </div>
-  </div>
-</header>
-    <div class="container">
-        <div class="form-container">
+
+    <!-- Overlay Modal -->
+    <div class="overlay hidden" id="overlay">
+        <div class="modal">
+            <span class="close-btn" id="close-btn">&times;</span>
+
             <div class="form-toggle">
                 <button id="login-toggle" class="active">Login</button>
                 <button id="signup-toggle">Create Account</button>
@@ -54,5 +61,3 @@
 </body>
 
 </html>
-
-
