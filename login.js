@@ -1,9 +1,25 @@
-// Toggle Forms
+// Get elements
 const loginForm = document.getElementById('login-form');
 const signupForm = document.getElementById('signup-form');
 const loginToggle = document.getElementById('login-toggle');
 const signupToggle = document.getElementById('signup-toggle');
+const overlay = document.getElementById('overlay');
+const closeBtn = document.getElementById('close-btn');
+const openLoginBtns = document.querySelectorAll('#open-login, #open-login-2');
 
+// Open modal buttons
+openLoginBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        overlay.classList.remove('hidden');
+    });
+});
+
+// Close modal
+closeBtn.addEventListener('click', () => {
+    overlay.classList.add('hidden');
+});
+
+// Toggle forms
 loginToggle.addEventListener('click', () => {
     loginForm.classList.remove('hidden');
     signupForm.classList.add('hidden');
@@ -18,19 +34,14 @@ signupToggle.addEventListener('click', () => {
     loginToggle.classList.remove('active');
 });
 
-
-// ================== SIGNUP ==================
+// SIGNUP
 signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
-
     const name = document.getElementById('signup-name').value;
     const email = document.getElementById('signup-email').value;
     const password = document.getElementById('signup-password').value;
 
-    // Get existing users from localStorage
     let users = JSON.parse(localStorage.getItem('users')) || [];
-
-    // Check if email already exists
     const userExists = users.find(user => user.email === email);
 
     if (userExists) {
@@ -38,7 +49,6 @@ signupForm.addEventListener('submit', (e) => {
         return;
     }
 
-    // Save new user
     users.push({ name, email, password });
     localStorage.setItem('users', JSON.stringify(users));
 
@@ -48,35 +58,13 @@ signupForm.addEventListener('submit', (e) => {
     // Switch to login
     signupForm.classList.add('hidden');
     loginForm.classList.remove('hidden');
+    loginToggle.classList.add('active');
+    signupToggle.classList.remove('active');
 });
 
-
-// // ================== LOGIN ==================
-// loginForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-
-//     const email = document.getElementById('login-email').value;
-//     const password = document.getElementById('login-password').value;
-
-//     let users = JSON.parse(localStorage.getItem('users')) || [];
-
-//     // Check if user exists
-//     const validUser = users.find(user =>
-//         user.email === email && user.password === password
-//     );
-
-//     if (validUser) {
-//         alert("Login successful!");
-//         window.location.href = "education.html"; // Redirect
-//     } else {
-//         alert("Invalid email or password!");
-//     }
-// });
-
-// ================== LOGIN ==================
+// LOGIN
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
-
     const emailInput = document.getElementById('login-email');
     const passwordInput = document.getElementById('login-password');
 
@@ -84,23 +72,16 @@ loginForm.addEventListener('submit', (e) => {
     const password = passwordInput.value;
 
     let users = JSON.parse(localStorage.getItem('users')) || [];
-
-    const validUser = users.find(user =>
-        user.email === email && user.password === password
-    );
+    const validUser = users.find(user => user.email === email && user.password === password);
 
     if (validUser) {
         alert("Login successful!");
-        window.location.href = "subject.html";
+        overlay.classList.add('hidden'); // close modal
+        window.location.href = "education.html";
     } else {
         alert("Invalid email or password!");
-
-        // Clear fields
         emailInput.value = "";
         passwordInput.value = "";
-
-        // Focus back to email field
         emailInput.focus();
     }
 });
-
